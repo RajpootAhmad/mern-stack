@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./binding.js"></script>
+    <style>
+        #todos li button{
+            float: right;
+            color: red;
+            block-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="newToDo">
+    <button id="btnAdd">Add New ToDo</button>
+    <ul id="todos">
+        <li>Make Coffee <button onclick="handleDelete(event)">Delete</button></li>
+        <li>Buy Milk <button onclick="handleDelete(event)">Delete</button></li>
+        <li>Feed the Cat <button onclick="handleDelete(event)">Delete</button></li>
+    </ul>
+</body>
+</html>
