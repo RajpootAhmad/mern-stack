@@ -3,10 +3,33 @@ $(function () {
   $("#stories").on("click", ".btn-danger", handleDelete);
   $("#stories").on("click", ".btn-warning", handleUpdate);
   $("#addBtn").click(addStory);
+  $("#updateSave").click(function () {
+    var id = $("#updateId").val();
+    var title = $("#updateTitle").val();
+    var content = $("#updateBody").val();
+    $.ajax({
+      url: `https://usmanlive.com/wp-json/api/stories/` + id,
+      data: { title, content },
+      method: "PUT",
+      success: function (response) {
+        console.log(response.title);
+        loadStories();
+        $("#updateModal").modal("hide");
+      },
+    });
+  });
 });
 
 function handleUpdate() {
-  $("#updateModel").modal("show");
+  var btn = $(this);
+  var parentDiv = btn.closest(".str");
+  let id = parentDiv.attr("data-id");
+  $.get(`https://usmanlive.com/wp-json/api/stories/` + id, function (response) {
+    $("#updateId").val(response.id);
+    $("#updateTitle").val(response.title);
+    $("#updateBody").val(response.content);
+    $("#updateModal").modal("show");
+  });
 }
 
 function addStory() {
@@ -19,6 +42,8 @@ function addStory() {
     success: function (response) {
       console.log(response);
       loadStories();
+      title = $("#title").val("");
+      content = $("#body").val("");
     },
   });
 }

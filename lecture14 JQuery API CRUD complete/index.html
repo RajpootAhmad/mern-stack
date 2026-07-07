@@ -36,17 +36,9 @@
       />
       <small id="bodyHelp" class="form-text text-muted">Enter Detail</small>
     </div>
-    <button id="addBtn" class="btn btn-info">Add recipe</button>
+    <button id="addBtn" class="btn btn-info">Add Stories</button>
+
     <div id="stories">Loading ...</div>
-    <!-- Button trigger modal -->
-    <!-- <button
-      type="button"
-      class="btn btn-primary btn-lg"
-      data-toggle="modal"
-      data-target="#updateModal"
-    >
-      Launch
-    </button> -->
 
     <!-- Modal -->
     <div
@@ -71,11 +63,33 @@
             </button>
           </div>
           <div class="modal-body">
-            <input type="text" id="updateTitle"></input> <br>
-            <input type="text" id="updateBody"></input> <br>
-        </div>
+            <input type="hidden" id="updateId" /> <br />
+            <div class="form-group">
+              <label for="updateTitle">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                name="updateTitle"
+                id="updateTitle"
+                aria-describedby="updateHelpId"
+                placeholder=""
+              />
+              <small id="updateHelpId" class="form-text text-muted"
+                >Enter Title to update</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="updateBody">modal-content</label>
+              <textarea
+                class="form-control"
+                name="updateBody"
+                id="updateBody"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
           <div class="modal-footer">
-            <button id="updateSave" class="btn btn-primary">Update </button>
+            <button id="updateSave" class="btn btn-primary">Update</button>
             <button
               type="button"
               class="btn btn-secondary"
@@ -83,7 +97,6 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save</button>
           </div>
         </div>
       </div>
