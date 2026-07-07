@@ -44,6 +44,7 @@ function addStory() {
       loadStories();
       title = $("#title").val("");
       content = $("#body").val("");
+      $("#addModal").modal("hide");
     },
   });
 }
