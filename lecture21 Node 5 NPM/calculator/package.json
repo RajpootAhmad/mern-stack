@@ -1,0 +1,15 @@
+{
+  "name": "ahmad-calculator-2026-unique",
+  "version": "2.0.0",
+  "description": "this is a test nmp package for my practice",
+  "keywords": [
+    "Calculator"
+  ],
+  "license": "ISC",
+  "author": "Ahmad",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
