@@ -23,6 +23,12 @@ router.get("/delete/:id", async function (req, res, next) {
   res.redirect("/products");
 });
 
+router.get("/cart/:id", async function (req, res, next) {
+  let product = await Product.findById(req.params.id);
+  console.log("add this to cart");
+  res.redirect("/products");
+});
+
 router.get("/edit/:id", async function (req, res, next) {
   let product = await Product.findById(req.params.id);
   res.render("products/edit", { product });
